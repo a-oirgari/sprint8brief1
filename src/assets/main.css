@@ -1,0 +1,280 @@
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Auth pages (login / register) ─────────────────────────── */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-card h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ── Profile page ───────────────────────────────────────────── */
+.profile-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  height: fit-content;
+}
+
+.profile-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-card header h1 { font-size: 1.5rem; }
+
+.profile-card section {
+  border-top: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
+.profile-card section h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.danger-zone h2 { color: #e53e3e; }
+
+/* ── Form fields ────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-size: .875rem;
+  font-weight: 500;
+  margin-bottom: .3rem;
+  color: #444;
+}
+
+.field input {
+  padding: .65rem .9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color .2s;
+  outline: none;
+}
+
+.field input:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,.15); }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+button[type="submit"],
+button.btn-primary {
+  width: 100%;
+  padding: .75rem;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+  margin-top: .5rem;
+}
+
+button[type="submit"]:hover,
+button.btn-primary:hover { background: #4f46e5; }
+
+button:disabled { opacity: .6; cursor: not-allowed; }
+
+.btn-danger {
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: .65rem 1.25rem;
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.btn-danger:hover { background: #c53030; }
+
+.btn-danger-outline {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.btn-danger-outline:hover { background: #e53e3e; color: #fff; }
+
+.btn-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ── Social buttons ─────────────────────────────────────────── */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin: .5rem 0;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  width: 100%;
+  padding: .7rem;
+  border-radius: 8px;
+  font-size: .95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.btn-google {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  color: #333;
+}
+
+.btn-google:hover { background: #f9fafb; border-color: #aaa; }
+
+.btn-github {
+  background: #24292e;
+  border: 1px solid #24292e;
+  color: #fff;
+}
+
+.btn-github:hover { background: #1b1f23; }
+
+/* ── Feedback messages ──────────────────────────────────────── */
+.error  { color: #e53e3e; font-size: .85rem; margin-top: .25rem; }
+.error.global { margin: .5rem 0; font-size: .9rem; }
+.success { color: #38a169; font-size: .9rem; margin: .5rem 0; }
+.info    { color: #666; font-size: .9rem; background: #f0f2f5; padding: .75rem; border-radius: 8px; }
+.loader  { text-align: center; color: #666; padding: 2rem; }
+
+/* ── Divider ────────────────────────────────────────────────── */
+.divider {
+  text-align: center;
+  color: #aaa;
+  font-size: .85rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider::before { left: 0; }
+.divider::after  { right: 0; }
+
+/* ── Switch link ────────────────────────────────────────────── */
+.switch {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: .9rem;
+  color: #555;
+}
+
+.switch a { color: #6366f1; font-weight: 500; text-decoration: none; }
+.switch a:hover { text-decoration: underline; }
+
+/* ── Modal ──────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+
+.modal h3 { margin-bottom: .75rem; }
+.modal p  { color: #555; margin-bottom: 1.5rem; }
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+}
+
+.modal-actions button:first-child {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: .6rem 1.2rem;
+  cursor: pointer;
+  font-size: .95rem;
+  width: auto;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .auth-card, .profile-card { padding: 1.5rem 1rem; }
+  .profile-card header { flex-direction: column; align-items: flex-start; gap: .75rem; }
+}
